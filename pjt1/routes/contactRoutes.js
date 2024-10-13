@@ -7,14 +7,8 @@ const {getContacts,addContacts, getOneContacts, updateContacts,deleteContacts} =
 //     res.status(200).json({"message":"Get all contacts"});
 // })
 
-router.route("/").get(getContacts);
+router.route("/").get(getContacts).post(addContacts);
 
-router.route("/").post(addContacts);
-
-router.route("/:id").get(getOneContacts);
-
-router.route("/:id").put(updateContacts)
-
-router.route("/:id").delete(deleteContacts);
+router.route("/:id").get(getOneContacts).put(updateContacts).delete(deleteContacts);
 
 module.exports = router;
